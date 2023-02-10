@@ -6,5 +6,69 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
   </head>
-  <body></body>
+  <body>
+    <form id="formInput" class="input-form">
+      <div class="form-group">
+        <h2>beautiful form</h2>
+      </div>
+      <div>
+        <label for="searchInput">searchInput:<br /></label>
+        <input type="text" id="searchInput" />
+      </div>
+      <div>
+        <label for="cousine">Cousine:</label>
+        <select name="cousine" id="cousine">
+          <option selected>-- select an option --</option>
+          <option value="african">african</option>
+          <option value="chinese">chinese</option>
+          <option value="japanese">japanese</option>
+          <option value="korean">korean</option>
+          <option value="vietnamese">vietnamese</option>
+          <option value="british">british</option>
+          <option value="indian">indian</option>
+          <option value="irish">irish</option>
+          <option value="french">french</option>
+          <option value="italian">italian</option>
+          <option value="spanish">spanish</option>
+          <option value="middle eastern">middle eastern</option>
+          <option value="jewish">jewish</option>
+          <option value="american">american</option>
+          <option value="cajun">cajun</option>
+          <option value="southern">southern</option>
+          <option value="greek">greek</option>
+          <option value="german">german</option>
+          <option value="nordic">nordic</option>
+          <option value="eastern european">eastern european</option>
+          <option value="caribbean">caribbean</option>
+          <option value="latin american">latin american</option>
+        </select>
+      </div>
+      <div>
+        <label for="diet">diet:</label>
+        <select name="diet" id="diet">
+          <option selected>-- select an option --</option>
+          <option value="pescetarian">pescetarian</option>
+          <option value="lacto vegetarian">lacto vegetarian</option>
+          <option value="ovo vegetarian">ovo vegetarian</option>
+          <option value="vegan">vegan</option>
+          <option value="paleo">paleo</option>
+          <option value="primal">primal</option>
+          <option value="vegetarian">vegetarian</option>
+        </select>
+      </div>
+      <br />
+      <div>
+        <label for="intolerances">intolerances:<br /></label>
+        <input type="text" id="intolerances" placeholder="coma separated string" />
+        <p>dairy,egg,gluten,peanut,sesame,seafood,shellfish,soy,sulfite,tree nut,wheat</p>
+      </div>
+      <div>
+        <label for="excludeIngredient">excludeIngredient:<br /></label>
+        <input type="text" id="excludeIngredient" placeholder="tomato,cheese" />
+      </div>
+    </form>
+    <button id="searchBtn">Submit</button>
+  </body>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="./assets/js/logic.js"></script>
 </html>
