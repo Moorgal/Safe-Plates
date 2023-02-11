@@ -46,3 +46,53 @@ newSearch.addEventListener('click', function () {
   formInput.reset();
   location.reload();
 });
+
+//Testing new API for cocktails 
+
+let ingredientsToAvoid = [];
+
+async function fetchCocktailRecipes() {
+  const response = await fetch('https://www.thecocktaildb.com/api/json/v1/1/filter.php?a=Alcoholic');
+  const cocktails = await response.json();
+
+  const filteredCocktails = cocktails.drinks.filter(cocktail => {
+    for (let i = 0; i < ingredientsToAvoid.length; i++) {
+      if (cocktail.strIngredients && cocktail.strIngredients.includes(ingredientsToAvoid[i])) {
+        return false;
+      }
+    }
+    return true;
+  });
+
+  const maxTenCocktails = filteredCocktails.slice(0, 10);
+  return maxTenCocktails;
+}
+
+async function main() {
+  const ingredientInput = document.getElementById("ingredient-input");
+  ingredientsToAvoid = ingredientInput.value.split(",");
+
+  const cocktails = await fetchCocktailRecipes();
+  const recipeList = document.getElementById("recipe-list");
+
+  recipeList.innerHTML = '';
+  for (let i = 0; i < cocktails.length; i++) {
+    const cocktail = cocktails[i];
+    //It only returns the name of the drink and the photo, but it doesn't return ingredients and instructions
+    recipeList.innerHTML += `
+      <div>
+        <h2>${cocktail.strDrink}</h2>
+        <img src="${cocktail.strDrinkThumb}" alt="${cocktail.strDrink}">
+         
+        ${cocktail.strIngredients ? `<p>Ingredients: ${cocktail.strIngredients.join(", ")}</p>` : ''}
+        <p>Instructions: ${cocktail.strInstructions}</p>
+      </div>
+    `;
+  }
+}
+
+document.getElementById("ingredient-form").addEventListener("submit", async function(event) {
+  event.preventDefault();
+  await main();
+});
+
