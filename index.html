@@ -70,6 +70,21 @@
     <button id="searchBtn">Submit</button>
     <button id="newSearch">new search</button>
     <main id="result"></main>
+    <!--Added the code to display input fiels for new cocktail API--> 
+    <div>
+      <title>Cocktail Recipe Finder</title>
+    </div>
+    <div>
+      <h1>Cocktail Recipe Finder</h1>
+      <form id="ingredient-form">
+        <label for="ingredient-input">Ingredients to avoid (separated by commas):</label>
+        <input type="text" id="ingredient-input" name="ingredients">
+        <button type="submit">Find Recipes</button>
+      </form>
+      <div id="recipe-list">
+        <!-- Cocktail recipes will be displayed here -->
+      </div>
+    </div>
   </body>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="./assets/js/logic.js"></script>
