@@ -5,19 +5,73 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <!-- bootstrap cdn & css link -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="./assets/css/style.css">
   </head>
   <body>
+    <header>
+      <!-- boostrap navbar -->
+      <!-- <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">Safe Plates</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item active">
+              <a class="nav-link" href="#about">What We Do<span class="sr-only"></span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#recipesearch">Work</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#contact">Contact Us</a>
+            </li>
+          </ul>
+        </div>
+      </nav> -->
+      <!-- googleapi navbar -->
+      <nav>
+        <div class="navbar">
+          <div class="container nav-container">
+              <input class="checkbox" type="checkbox" name="" id="" />
+              <div class="hamburger-lines">
+                <span class="line line1"></span>
+                <span class="line line2"></span>
+                <span class="line line3"></span>
+              </div>  
+            <div class="logo">
+              <h1>Safe Plates</h1>
+            </div>
+            <div class="menu-items">
+              <li><a href="#">What We Do</a></li>
+              <li><a href="#">Recipe Search</a></li>
+              <li><a href="#">contact</a></li>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <!-- jumbotron/what we do -->
+    <div class="jumbotron jumbotron-fluid">
+      <div class="container">
+        <h3 class="display-4">What We Do</h3>
+        <p class="lead">Here at Safe Plates, you can find the perfect ingredients for a meal to shake up yor palette - even if you have allergens or intolerances. Just fill in the form below and find the perfect results for you today!</p>
+      </div>
+    </div>
+    <!-- form -->
     <form id="formInput" class="input-form">
       <div class="form-group">
-        <h2>beautiful form</h2>
+        <h2>Recipe Search</h2>
       </div>
       <div>
         <label for="searchInput">searchInput:<br /></label>
         <input type="text" id="searchInput" />
       </div>
       <div>
-        <label for="cousine">Cousine:</label>
-        <select name="cousine" id="cousine">
+        <label for="cuisine">Cuisine:</label>
+        <select name="cuisine" id="cuisine">
           <option selected>-- select an option --</option>
           <option value="african">african</option>
           <option value="chinese">chinese</option>
@@ -59,7 +113,7 @@
       <br />
       <div>
         <label for="intolerances">intolerances:<br /></label>
-        <input type="text" id="intolerances" placeholder="coma separated string" />
+        <input type="text" id="intolerances" placeholder="comma separated string" />
         <p>dairy,egg,gluten,peanut,sesame,seafood,shellfish,soy,sulfite,tree nut,wheat</p>
       </div>
       <div>
@@ -68,7 +122,7 @@
       </div>
     </form>
     <button id="searchBtn">Submit</button>
-    <button id="newSearch">new search</button>
+    <button id="newSearch">New search</button>
     <main id="result"></main>
     <!--Added the code to display input fiels for new cocktail API--> 
     <div>
