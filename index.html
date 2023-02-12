@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./assets/css/style.css" />
     <title>Document</title>
     <!-- bootstrap cdn & css link -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
@@ -116,15 +117,15 @@
         <input type="text" id="intolerances" placeholder="comma separated string" />
         <p>dairy,egg,gluten,peanut,sesame,seafood,shellfish,soy,sulfite,tree nut,wheat</p>
       </div>
-      <div>
-        <label for="excludeIngredient">excludeIngredient:<br /></label>
-        <input type="text" id="excludeIngredient" placeholder="tomato,cheese" />
-      </div>
     </form>
     <button id="searchBtn">Submit</button>
-    <button id="newSearch">New search</button>
-    <main id="result"></main>
+
+    <button id="newSearch">new search</button>
+    <main id="result" class="slideshow-container"></main>
+
+
     <!--Added the code to display input fiels for new cocktail API--> 
+
     <div>
       <title>Cocktail Recipe Finder</title>
     </div>
@@ -132,7 +133,7 @@
       <h1>Cocktail Recipe Finder</h1>
       <form id="ingredient-form">
         <label for="ingredient-input">Ingredients to avoid (separated by commas):</label>
-        <input type="text" id="ingredient-input" name="ingredients">
+        <input type="text" id="ingredient-input" name="ingredients" />
         <button type="submit">Find Recipes</button>
       </form>
       <div id="recipe-list">
