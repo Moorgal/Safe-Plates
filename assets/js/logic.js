@@ -15,7 +15,7 @@ searchBtn.addEventListener('click', function () {
   const settings = {
     async: true,
     crossDomain: true,
-    url: `https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/complexSearch?query=${searchInput.value}&cuisine=${cousine.value}&diet=${diet.value}&intolerances=${intolerances.value}&instructionsRequired=true&fillIngredients=true&addRecipeInformation=true&sort=calories&sortDirection=asc&number=20&limitLicense=false&ranking=2`,
+    url: `https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/complexSearch?query=${searchInput.value}&cuisine=${cuisine.value}&diet=${diet.value}&intolerances=${intolerances.value}&instructionsRequired=true&fillIngredients=true&addRecipeInformation=true&sort=calories&sortDirection=asc&number=20&limitLicense=false&ranking=2`,
     method: 'GET',
     headers: {
       'X-RapidAPI-Key': 'b3d7db931cmshf703ee682f29c40p1e83fejsn545b9d960af7',
@@ -28,7 +28,6 @@ searchBtn.addEventListener('click', function () {
       // render main meal info
       let renderMeal = document.createElement('div');
       renderMeal.classList.add('mySlides');
-      renderMeal.classList.add('fade');
       renderMeal.innerHTML = `<div class="numbertext">${i + 1}/${response.results.length}</div>
                             <img src="${response.results[i].image}">
                             <h2>${response.results[i].title}</h2>
@@ -58,18 +57,24 @@ searchBtn.addEventListener('click', function () {
     // -----------slideshow----------
     // ----based on w3schools.com slideshow----
     // ------------------------------
-
     let slideIndex = 1;
     let slides = document.getElementsByClassName('mySlides');
     console.log(slides);
     showSlides(slideIndex);
-    document.querySelector('.prev').addEventListener('click', function () {
-      slideIndex--;
-      showSlides(slideIndex);
+    // -----------choose !!ALL!! prev buttons----------
+    let allPrev = document.querySelectorAll('.prev');
+    allPrev.forEach(function (one) {
+      one.addEventListener('click', function () {
+        slideIndex--;
+        showSlides(slideIndex);
+      });
     });
-    document.querySelector('.next').addEventListener('click', function () {
-      slideIndex++;
-      showSlides(slideIndex);
+    let allNext = document.querySelectorAll('.next');
+    allNext.forEach(function (one) {
+      one.addEventListener('click', function () {
+        slideIndex++;
+        showSlides(slideIndex);
+      });
     });
     function showSlides(n) {
       console.log(slideIndex);
