@@ -112,9 +112,9 @@ body {
 }
 
 .container {
-  max-width: 1050px;
-  width: 90%;
-  margin: auto;
+    max-width: 1050px;
+    width: 100%;
+    margin: auto;
 }
 
 .navbar {
@@ -145,14 +145,17 @@ body {
   padding: 0.7rem;
 }
 
-.navbar .nav-container a:hover {
-  font-weight: bolder;
+.navbar .nav-container a:hover{
+    font-weight: bolder;
+    text-decoration: underline;
 }
 
 .nav-container {
-  display: block;
-  position: relative;
-  height: 60px;
+    display: block;
+    position: relative;
+    height: 60px;
+    background-color: #ffffff;
+   
 }
 
 .nav-container .checkbox {
@@ -203,17 +206,17 @@ body {
 }
 
 .navbar .menu-items {
-  padding-top: 120px;
-  box-shadow: inset 0 0 2000px rgba(255, 255, 255, 0.5);
-  height: 100vh;
-  width: 100%;
-  transform: translate(-150%);
-  display: flex;
-  flex-direction: column;
-  margin-left: -40px;
-  padding-left: 50px;
-  transition: transform 0.5s ease-in-out;
-  text-align: center;
+    padding-top: 120px;
+    background-color: rgba(255,255,255,0.85);
+    height: 300px;
+    width: 100%;
+    transform: translate(-150%);
+    display: flex;
+    flex-direction: column;
+    margin-left: -40px;
+    padding-left: 50px;
+    transition: transform 0.5s ease-in-out;
+    text-align: center;
 }
 
 .navbar .menu-items li {
@@ -253,6 +256,11 @@ body {
   transform: rotate(-45deg);
 }
 
-.nav-container input[type='checkbox']:checked ~ .logo {
-  display: none;
+.nav-container input[type="checkbox"]:checked ~ .logo{
+    /* display: ; */
+}
+
+.jumbotron {
+    background-color: #BE9F7E;
+    color: white;
 }
