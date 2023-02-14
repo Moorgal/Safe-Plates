@@ -49,7 +49,7 @@ body {
 
 .container {
     max-width: 1050px;
-    width: 90%;
+    width: 100%;
     margin: auto;
 }
 
@@ -83,12 +83,15 @@ body {
 
 .navbar .nav-container a:hover{
     font-weight: bolder;
+    text-decoration: underline;
 }
 
 .nav-container {
     display: block;
     position: relative;
     height: 60px;
+    background-color: #ffffff;
+    
 }
 
 .nav-container .checkbox {
@@ -140,8 +143,8 @@ body {
 
 .navbar .menu-items {
     padding-top: 120px;
-    box-shadow: inset 0 0 2000px rgba(255, 255, 255, .5);
-    height: 100vh;
+    background-color: rgba(255,255,255,0.85);
+    height: 300px;
     width: 100%;
     transform: translate(-150%);
     display: flex;
@@ -150,6 +153,7 @@ body {
     padding-left: 50px;
     transition: transform 0.5s ease-in-out;
     text-align: center;
+
 }
 
 .navbar .menu-items li {
@@ -190,5 +194,10 @@ body {
 }
 
 .nav-container input[type="checkbox"]:checked ~ .logo{
-    display: none;
+    /* display: ; */
+}
+
+.jumbotron {
+    background-color: #BE9F7E;
+    color: white;
 }
