@@ -4,10 +4,16 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./assets/css/style.css" />
     <title>Document</title>
     <!-- bootstrap cdn & css link -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link rel="stylesheet" href="./assets/css/style.css">
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="./assets/css/style.css" />
   </head>
   <body>
     <header>
@@ -35,12 +41,12 @@
       <nav>
         <div class="navbar">
           <div class="container nav-container">
-              <input class="checkbox" type="checkbox" name="" id="" />
-              <div class="hamburger-lines">
-                <span class="line line1"></span>
-                <span class="line line2"></span>
-                <span class="line line3"></span>
-              </div>  
+            <input class="checkbox" type="checkbox" name="" id="" />
+            <div class="hamburger-lines">
+              <span class="line line1"></span>
+              <span class="line line2"></span>
+              <span class="line line3"></span>
+            </div>
             <div class="logo">
               <h1>Safe Plates</h1>
             </div>
@@ -57,7 +63,10 @@
     <div class="jumbotron jumbotron-fluid">
       <div class="container">
         <h3 class="display-4">What We Do</h3>
-        <p class="lead">Here at Safe Plates, you can find the perfect ingredients for a meal to shake up yor palette - even if you have allergens or intolerances. Just fill in the form below and find the perfect results for you today!</p>
+        <p class="lead">
+          Here at Safe Plates, you can find the perfect ingredients for a meal to shake up yor palette - even if you have allergens or intolerances. Just fill in the form below and find the perfect
+          results for you today!
+        </p>
       </div>
     </div>
     <!-- form -->
@@ -110,20 +119,49 @@
           <option value="vegetarian">vegetarian</option>
         </select>
       </div>
-      <br />
       <div>
-        <label for="intolerances">intolerances:<br /></label>
-        <input type="text" id="intolerances" placeholder="comma separated string" />
-        <p>dairy,egg,gluten,peanut,sesame,seafood,shellfish,soy,sulfite,tree nut,wheat</p>
-      </div>
-      <div>
-        <label for="excludeIngredient">excludeIngredient:<br /></label>
-        <input type="text" id="excludeIngredient" placeholder="tomato,cheese" />
+        <label for="intolerances">intolerances:</label>
+        <select name="intolerances" id="intolerances">
+          <option selected>-- select an option --</option>
+          <option value="dairy">dairy</option>
+          <option value="egg">egg</option>
+          <option value="gluten">gluten</option>
+          <option value="peanut">peanut</option>
+          <option value="sesame">sesame</option>
+          <option value="seafood">seafood</option>
+          <option value="shellfish">shellfish</option>
+          <option value="soy">soy</option>
+          <option value="sulfite">sulfite</option>
+          <option value="tree nut">tree nut</option>
+          <option value="wheat">wheat</option>
+        </select>
+        <div>
+          <label for="excludeIngredients">exclude ingredients:<br /></label>
+          <input type="text" id="excludeIngredients" placeholder="coma separated list" />
+        </div>
       </div>
     </form>
     <button id="searchBtn">Submit</button>
-    <button id="newSearch">New search</button>
-    <main id="result"></main>
+
+    <button id="newSearch">new search</button>
+    <main id="result" class="slideshow-container"></main>
+
+    <!--Added the code to display input fiels for new cocktail API-->
+
+    <div>
+      <title>Cocktail Recipe Finder</title>
+    </div>
+    <div>
+      <h1>Cocktail Recipe Finder</h1>
+      <form id="ingredient-form">
+        <label for="ingredient-input">Ingredients to avoid (separated by commas):</label>
+        <input type="text" id="ingredient-input" name="ingredients" />
+        <button type="submit">Find Recipes</button>
+      </form>
+      <div id="recipe-list">
+        <!-- Cocktail recipes will be displayed here -->
+      </div>
+    </div>
   </body>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="./assets/js/logic.js"></script>
