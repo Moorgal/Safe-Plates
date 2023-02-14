@@ -5,17 +5,20 @@ let formInput = document.querySelector('#formInput');
 let cuisine = document.querySelector('#cuisine');
 let diet = document.querySelector('#diet');
 let intolerances = document.querySelector('#intolerances');
+let excludeIngredients = document.querySelector('#excludeIngredients');
+let randomStart = Math.floor(Math.random() * 101);
 let result = document.querySelector('#result');
 
 // ------------------------------
 // ---------meal search----------
 // ------------------------------
 searchBtn.addEventListener('click', function () {
+  console.log(randomStart);
   // API setup
   const settings = {
     async: true,
     crossDomain: true,
-    url: `https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/complexSearch?query=${searchInput.value}&cuisine=${cuisine.value}&diet=${diet.value}&intolerances=${intolerances.value}&instructionsRequired=true&fillIngredients=true&addRecipeInformation=true&sort=calories&sortDirection=asc&number=20&limitLicense=false&ranking=2`,
+    url: `https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/complexSearch?query=${searchInput.value}&cuisine=${cuisine.value}&diet=${diet.value}&intolerances=${intolerances.value}&excludeIngredients=${excludeIngredients.value}&instructionsRequired=true&fillIngredients=true&addRecipeInformation=true&sort=calories&sortDirection=asc&offset=${randomStart}&number=20&limitLicense=false&ranking=2`,
     method: 'GET',
     headers: {
       'X-RapidAPI-Key': 'b3d7db931cmshf703ee682f29c40p1e83fejsn545b9d960af7',

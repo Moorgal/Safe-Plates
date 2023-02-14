@@ -120,7 +120,7 @@
         </select>
       </div>
       <div>
-        <label for="intolerances">allergens:</label>
+        <label for="intolerances">intolerances:</label>
         <select name="intolerances" id="intolerances">
           <option selected>-- select an option --</option>
           <option value="dairy">dairy</option>
@@ -135,6 +135,10 @@
           <option value="tree nut">tree nut</option>
           <option value="wheat">wheat</option>
         </select>
+        <div>
+          <label for="excludeIngredients">exclude ingredients:<br /></label>
+          <input type="text" id="excludeIngredients" placeholder="coma separated list" />
+        </div>
       </div>
     </form>
     <button id="searchBtn">Submit</button>
