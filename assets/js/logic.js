@@ -100,51 +100,76 @@ newSearch.addEventListener('click', function () {
   location.reload();
 });
 
-//Testing new API for cocktails
 
-let ingredientsToAvoid = [];
 
-async function fetchCocktailRecipes() {
-  const response = await fetch('https://www.thecocktaildb.com/api/json/v1/1/filter.php?a=Alcoholic');
-  const cocktails = await response.json();
+const apiKey = "b432930e82mshb0f655ab60238cap15ea9fjsnd74927c82e98";
+const apiHost = "cocktail-by-api-ninjas.p.rapidapi.com";
+const apiUrl = "https://cocktail-by-api-ninjas.p.rapidapi.com/v1/cocktail";
 
-  const filteredCocktails = cocktails.drinks.filter((cocktail) => {
-    for (let i = 0; i < ingredientsToAvoid.length; i++) {
-      if (cocktail.strIngredients && cocktail.strIngredients.includes(ingredientsToAvoid[i])) {
-        return false;
-      }
-    }
-    return true;
-  });
+const avoidIngredientInput = document.querySelector("#avoid-ingredient");
+const includeIngredientInput = document.querySelector("#include-ingredient");
 
-  const maxTenCocktails = filteredCocktails.slice(0, 10);
-  return maxTenCocktails;
-}
+const getCocktailData = () => {
+  let avoidIngredient = avoidIngredientInput.value;
+  let includeIngredient = includeIngredientInput.value;
 
-async function main() {
-  const ingredientInput = document.getElementById('ingredient-input');
-  ingredientsToAvoid = ingredientInput.value.split(',');
-
-  const cocktails = await fetchCocktailRecipes();
-  const recipeList = document.getElementById('recipe-list');
-
-  recipeList.innerHTML = '';
-  for (let i = 0; i < cocktails.length; i++) {
-    const cocktail = cocktails[i];
-    //It only returns the name of the drink and the photo, but it doesn't return ingredients and instructions
-    recipeList.innerHTML += `
-      <div>
-        <h2>${cocktail.strDrink}</h2>
-        <img src="${cocktail.strDrinkThumb}" alt="${cocktail.strDrink}">
-         
-        ${cocktail.strIngredients ? `<p>Ingredients: ${cocktail.strIngredients.join(', ')}</p>` : ''}
-        <p>Instructions: ${cocktail.strInstructions}</p>
-      </div>
-    `;
+   // Check if input fields are empty
+   if (avoidIngredient === '') {
+    avoidIngredient = 'none';
   }
-}
+  if (includeIngredient === '') {
+    includeIngredient = 'none';
+  }
 
-document.getElementById('ingredient-form').addEventListener('submit', async function (event) {
+  const params = `?name=${encodeURI(includeIngredient)}&without=${encodeURI(avoidIngredient)}`;
+  console.log(params);
+  const settings = {
+    "async": true,
+    "crossDomain": true,
+    "url": apiUrl + params,
+    "method": "GET",
+    "headers": {
+      "X-RapidAPI-Key": apiKey,
+      "X-RapidAPI-Host": apiHost
+    }
+  };
+
+  $.ajax(settings).done(function (response) {
+    // Clear the recipe list
+    $('#recipe-list').empty();
+
+    // Loop through each cocktail in the response and add them to the list
+    response.forEach(cocktail => {
+      // Create a new element to hold the cocktail details
+      const cocktailElem = $('<div>');
+
+      // Add the cocktail name as a heading
+      const headingElem = $('<h2>').text(cocktail.name);
+      cocktailElem.append(headingElem);
+
+      // Add the cocktail ingredients as a list
+      const ingredientsList = $('<ul>');
+      cocktail.ingredients.forEach(ingredient => {
+        const ingredientItem = $('<li>').text(ingredient);
+        ingredientsList.append(ingredientItem);
+      });
+      cocktailElem.append($('<h3>').text('Ingredients:'));
+      cocktailElem.append(ingredientsList);
+
+      // Add the cocktail instructions
+      const instructionsElem = $('<p>').text(cocktail.instructions);
+      cocktailElem.append($('<h3>').text('Instructions:'));
+      cocktailElem.append(instructionsElem);
+
+      // Add the cocktail details to the recipe list
+      $('#recipe-list').append(cocktailElem);
+    });
+  });
+};
+
+const form = document.querySelector('#ingredient-form');
+form.addEventListener('submit', function(event) {
   event.preventDefault();
-  await main();
+  getCocktailData();
 });
+ 
