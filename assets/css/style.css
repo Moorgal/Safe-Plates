@@ -294,7 +294,7 @@ div .recipe-list {
     width: 100%;
     text-align: center;
   }
-  
+   
   /* Number text (1/3 etc) */
   .numbertext {
     color: #f2f2f2;
@@ -313,6 +313,8 @@ div .recipe-list {
     }
   }
   
+
+
 
 /* Footer */
 .social {
