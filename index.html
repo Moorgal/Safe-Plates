@@ -123,7 +123,7 @@
       </div>
       <div>
         <label for="intolerances">Intolerances:</label>
-        <select name="intolerances" id="intolerances" size="1">
+        <select name="intolerances" id="intolerances">
           <option selected>-- select an option --</option>
           <option value="dairy">dairy</option>
           <option value="egg">egg</option>
@@ -143,15 +143,16 @@
         </div>
       </div>
     </form>
-    <button id="searchBtn" class="search-button">Submit</button>
+    <button  id="searchBtn" class="btn btn-dark search-button">Submit</button>
 
-    <button id="newSearch" class="new-search">New Search</button>
+    <button type="button" id="newSearch" class="btn btn-dark new-search">New Search</button>
     <main id="result" class="slideshow-container"></main>
 
     <!--Added the code to display input fiels for new cocktail API-->
     <br>
     <div>
       <title>Cocktail Recipe Finder</title>
+      <hr class="my-4">
     </div>
     <div>
       <form id="ingredient-form" class="ingredient-form">
@@ -160,13 +161,16 @@
         <input type="text" id="avoid-ingredient" name="ingredients" placeholder="Comma separated list"/>
         <label for="include-ingredient">Main ingredient:</label>
         <input type="text" id="include-ingredient" name="ingredients" />
-        <button type="submit">Find Recipes</button>
+        <button type="submit" class="btn btn-dark">Find Recipes</button>
       </form>
-      <div id="recipe-list">
+      <div id="recipe-list" class="recipe-list">
         <!-- Cocktail recipes will be displayed here -->
       </div>
     </div>
   </body>
+  <footer>
+    <div class="social"
+  </footer>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="./assets/js/logic.js"></script>
 </html>

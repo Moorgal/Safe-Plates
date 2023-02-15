@@ -1,8 +1,9 @@
 /* Slideshow container */
 .slideshow-container {
-  max-width: 1000px;
+  max-width: auto;
   position: relative;
-  margin: auto;
+  margin: 3%;
+  background-color: rgba(138, 187, 119, 0.397)
 }
 
 /* Next & previous buttons */
@@ -120,7 +121,7 @@ body {
 
 .navbar {
     width: 100%;
-    box-shadow: 0 1px 4px rgb(146 161 176 / 15%);
+    box-shadow: 0 1px 4px rgb(146 161 176 / 5%);
 }
 
 .nav-container {
@@ -257,12 +258,12 @@ body {
 
 /* Jumbotron */
 .jumbotron {
-    background-color: #BE9F7E;
+    text-align: center;
+    background: linear-gradient(rgba(255,255,255,0), #BE9F7E, #352208);
     color: black;
 }
 
 .jumbotron .container {
-    background-color: rgba(255,255,255,0.05);
     padding: 2%;
 }
 
@@ -274,17 +275,33 @@ body {
 
 /* Forms */
 .input-form {
-    margin-left: 3% ;
+    text-align: center;
+    /* margin-left: 3% ; */
 }
 
 .search-button {
-    margin-left: 3% ;
+    
+    text-align: center;
+    margin: 3% ;
 }
 
 .new-search {
-    margin-left: 1.5%;
+    text-align: center;
 }
 
 .ingredient-form {
+    text-align: center;
     margin: 3%
+}
+
+.my-4 {
+    background-color: #e4626f;
+    outline:auto #e4626f;
+}
+.mySlides {
+    margin: 3%;
+}
+
+div .recipe-list {
+    margin: 5%
 }
