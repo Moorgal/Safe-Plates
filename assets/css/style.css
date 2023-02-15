@@ -1,69 +1,3 @@
-/* Slideshow container */
-.slideshow-container {
-  max-width: auto;
-  position: relative;
-  margin: 3%;
-  background-color: rgba(138, 187, 119, 0.397)
-}
-
-/* Next & previous buttons */
-.prev,
-.next {
-  cursor: pointer;
-  position: absolute;
-  top: 50%;
-  width: auto;
-  padding: 16px;
-  margin-top: -22px;
-  color: white;
-  font-weight: bold;
-  font-size: 18px;
-  transition: 0.6s ease;
-  border-radius: 0 3px 3px 0;
-  user-select: none;
-}
-
-/* Position the "next button" to the right */
-.next {
-  right: 0;
-  border-radius: 3px 0 0 3px;
-}
-
-/* On hover, add a black background color with a little bit see-through */
-.prev:hover,
-.next:hover {
-  background-color: rgba(0, 0, 0, 0.8);
-}
-
-/* Caption text */
-.text {
-  color: #f2f2f2;
-  font-size: 15px;
-  padding: 8px 12px;
-  position: absolute;
-  bottom: 8px;
-  width: 100%;
-  text-align: center;
-}
-
-/* Number text (1/3 etc) */
-.numbertext {
-  color: #f2f2f2;
-  font-size: 12px;
-  padding: 8px 12px;
-  position: absolute;
-  top: 0;
-}
-
-/* On smaller screens, decrease text size */
-@media only screen and (max-width: 300px) {
-  .prev,
-  .next,
-  .text {
-    font-size: 11px;
-  }
-}
-
 /* boostrap navbar
 * {
     box-sizing: border-box;
@@ -111,6 +45,7 @@ body {
 
 body {
     font-family: 'Poppins', sans-serif;
+    text-align: center;
 }
 
 .container {
@@ -121,7 +56,7 @@ body {
 
 .navbar {
     width: 100%;
-    box-shadow: 0 1px 4px rgb(146 161 176 / 5%);
+    box-shadow: 0 1px 4px rgb(146 161 176 / 15%);
 }
 
 .nav-container {
@@ -259,7 +194,8 @@ body {
 /* Jumbotron */
 .jumbotron {
     text-align: center;
-    background: linear-gradient(rgba(255,255,255,0), #BE9F7E, #352208);
+    background: white;
+    /* background: linear-gradient(rgba(255,255,255,0), #BE9F7E, #352208); */
     color: black;
 }
 
@@ -295,16 +231,88 @@ body {
 }
 
 .my-4 {
-    background-color: #e4626f;
-    outline:auto #e4626f;
+    background-color: #BE9F7E;
+    outline:auto #BE9F7E;
 }
 .mySlides {
     margin: 3%;
+    padding: 1%;
+    max-height: 700px;
+    overflow-y: scroll;
 }
 
 div .recipe-list {
     margin: 5%
 }
+
+/* Slideshow container */
+.slideshow-container {
+    max-width: auto;
+    position: relative;
+    margin: 3%;
+    background-color: rgb(190, 159, 126, 0.1)
+  }
+  
+  /* Next & previous buttons */
+  
+  .prev,
+  .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    /* left: 0; */
+    width: auto;
+    padding: 16px;
+    margin-top: -22px;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+  }
+  
+  /* Position the "next button" to the right */
+  .next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+  }
+  
+  /* On hover, add a black background color with a little bit see-through */
+  .prev:hover,
+  .next:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+  }
+  
+  /* Caption text */
+  .text {
+    color: #f2f2f2;
+    font-size: 15px;
+    padding: 8px 12px;
+    position: absolute;
+    bottom: 8px;
+    width: 100%;
+    text-align: center;
+  }
+  
+  /* Number text (1/3 etc) */
+  .numbertext {
+    color: #f2f2f2;
+    font-size: 12px;
+    padding: 8px 12px;
+    position: absolute;
+    top: 0;
+  }
+  
+  /* On smaller screens, decrease text size */
+  @media only screen and (max-width: 300px) {
+    .prev,
+    .next,
+    .text {
+      font-size: 11px;
+    }
+  }
+  
 
 /* Footer */
 .social {
