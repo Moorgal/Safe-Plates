@@ -305,3 +305,13 @@ body {
 div .recipe-list {
     margin: 5%
 }
+
+/* Footer */
+.social {
+    text-align: center;
+}
+
+.social a:link {
+    color: #0e2431;
+    text-decoration: none;
+}
