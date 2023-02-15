@@ -53,6 +53,7 @@
             <div class="menu-items">
               <li><a href="#About">What We Do</a></li>
               <li><a href="#Recipes">Recipe Search</a></li>
+              <li><a href="#Cocktails">Cocktail Search</a></li>
               <li><a href="#Contact">Contact Us</a></li>
             </div>
           </div>
@@ -67,15 +68,16 @@
           Here at Safe Plates, you can find the perfect ingredients for a meal to shake up yor palette - even if you have allergens or intolerances. Just fill in the form below and find the perfect
           results for you today!
         </p>
+        <button type="button" class="btn btn-light"><a href="#Recipes">Click here to search for recipe options!</a></button>
       </div>
     </div>
-    <!-- form -->
+    <!-- recipe form -->
     <form id="formInput" class="input-form">
-      <div class="form-group">
+      <div id="Recipes" class="form-group">
         <h2>Recipe Search</h2>
       </div>
       <div>
-        <label for="searchInput">searchInput:<br /></label>
+        <label for="searchInput">Search:<br /></label>
         <input type="text" id="searchInput" />
       </div>
       <div>
@@ -107,7 +109,7 @@
         </select>
       </div>
       <div>
-        <label for="diet">diet:</label>
+        <label for="diet">Diet:</label>
         <select name="diet" id="diet">
           <option selected>-- select an option --</option>
           <option value="pescetarian">pescetarian</option>
@@ -120,7 +122,7 @@
         </select>
       </div>
       <div>
-        <label for="intolerances">intolerances:</label>
+        <label for="intolerances">Intolerances:</label>
         <select name="intolerances" id="intolerances">
           <option selected>-- select an option --</option>
           <option value="dairy">dairy</option>
@@ -136,35 +138,43 @@
           <option value="wheat">wheat</option>
         </select>
         <div>
-          <label for="excludeIngredients">exclude ingredients:<br /></label>
-          <input type="text" id="excludeIngredients" placeholder="coma separated list" />
+          <label for="excludeIngredients">Exclude Ingredients:<br /></label>
+          <input type="text" id="excludeIngredients" placeholder=" Comma separated list" />
         </div>
       </div>
     </form>
-    <button id="searchBtn">Submit</button>
+    <button  id="searchBtn" class="btn btn-dark search-button">Submit</button>
 
-    <button id="newSearch">new search</button>
+    <button type="button" id="newSearch" class="btn btn-dark new-search">New Search</button>
     <main id="result" class="slideshow-container"></main>
 
     <!--Added the code to display input fiels for new cocktail API-->
-
+    <br>
     <div>
       <title>Cocktail Recipe Finder</title>
+      <hr class="my-4">
     </div>
     <div>
-      <h1>Cocktail Recipe Finder</h1>
-      <form id="ingredient-form">
-        <label for="avoid-ingredient">Ingredients to avoid (separated by commas):</label>
-        <input type="text" id="avoid-ingredient" name="ingredients" />
+      <form id="ingredient-form" class="ingredient-form">
+        <h2 id="Cocktails">Cocktail Recipe Finder</h2>
+        <label for="avoid-ingredient">Ingredients to avoid:</label>
+        <input type="text" id="avoid-ingredient" name="ingredients" placeholder="Comma separated list"/>
         <label for="include-ingredient">Main ingredient:</label>
         <input type="text" id="include-ingredient" name="ingredients" />
-        <button type="submit">Find Recipes</button>
+        <button type="submit" class="btn btn-dark">Find Recipes</button>
       </form>
-      <div id="recipe-list">
+      <div id="recipe-list" class="recipe-list">
         <!-- Cocktail recipes will be displayed here -->
       </div>
     </div>
   </body>
+  <footer>
+    <div class="social" id="Contact">
+      <h4>Contact Us</h4>
+        <a target="_blank" href="https://github.com/Moorgal/Safe-Plates"><i class="fa-brands fa-github"></i>GitHub</a>
+    </div>
+  </footer>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://kit.fontawesome.com/9dba25e0cc.js" crossorigin="anonymous"></script>
   <script src="./assets/js/logic.js"></script>
 </html>
