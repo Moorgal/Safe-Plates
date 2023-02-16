@@ -38,11 +38,18 @@
           </div>
         </div>
       </nav>
+     <script>
+      const aboutLink = document.querySelector("#about-link");
+      const navbar = document.querySelector(".navbar");
+      aboutLink.addEventListener("click", () => {
+      navbar.style.display = "none";
+      });
+    </script> 
     </header>
     <!-- jumbotron/what we do -->
     <div class="jumbotron jumbotron-fluid">
       <div class="container">
-        <h3 class="display-4">What We Do</h3>
+        <h3 class="display-4" id="About">What We Do</h3>
         <p class="lead">
           Here at Safe Plates, you can find the perfect ingredients for a meal to shake up yor palette - even if you have allergens or intolerances. Just fill in the form below and find the perfect results for you right away!
         </p>
