@@ -9,6 +9,46 @@ let excludeIngredients = document.querySelector('#excludeIngredients');
 let randomStart = Math.floor(Math.random() * 101);
 let result = document.querySelector('#result');
 
+
+// -----------navbar-------------
+// function openNav() {
+//   document.getElementById("menuItems").style.width = "100%";
+// }
+
+// function closeNav() {
+//   document.getElementById("menuItems").style.display= "none";
+// }
+// 2nd attempt (did not work)
+// var navbarToggle = document.getElementById('navbar-toggle');
+// var menuItems = document.getElementById('menuItems');
+
+// navbarToggle.addEventListener('click', function() {
+//   menuItems.classList.toggle('collapsed');
+// });
+
+// function toggleNavbar() {
+//   menuItems.classList.toggle('collapsed');
+// }
+
+// navbarToggle.addEventListener('click', toggleNavbar);
+
+// 3rd time's a charm (nope)
+// var navbarToggle = document.getElementById('navbar-toggle');
+// var navbarLinks = document.getElementById('menuItems');
+// var navbarMenuItems = document.querySelectorAll('.menu-items a');
+
+// navbarToggle.addEventListener('click', function() {
+//   navbarLinks.classList.toggle('collapsed');
+// });
+
+// if (navbarMenuItems) {
+//   navbarMenuItems.forEach(function(menuItem) {
+//     menuItem.addEventListener('click', function() {
+//       navbarLinks.classList.add('collapsed');
+//     });
+//   });
+// };
+
 // ------------------------------
 // ---------meal search----------
 // ------------------------------

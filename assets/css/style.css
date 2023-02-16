@@ -145,7 +145,6 @@ body {
     width: 100%;
     transform: translate(-150%);
     flex-direction: column;
-
     transition: transform 0.5s ease-in-out;
     text-align: center;
 }
@@ -190,6 +189,9 @@ body {
 .nav-container input[type="checkbox"]:checked ~ .logo{
     display: block;
 }
+
+/* Closing the navbar after clicking */
+
 
 /* Jumbotron */
 .jumbotron {
